@@ -493,7 +493,25 @@
             <p>&copy; 2021 <Span>Kasper</Span> All Right Reserved</p> 
         </div>
     </div>
-    <!--* End Footer -->
+    
+    <!--* Start icon responsive -->
+    <script>
+        let toggler = document.querySelector(".icon");
+        let navMenu = document.querySelector("nav ul");
+        toggler.onclick = function (e) {
+            e.stopPropagation();
+            navMenu.classList.toggle("open");
+        };
+        <!--* End Footer -->
+        document.addEventListener("click", (e) => {
+            if (e.target !== toggler && e.target !== navMenu) {
+                if (navMenu.classList.contains("open")) {
+                    navMenu.classList.remove("open");
+                }
+            }
+        });
+    </script>
+    <!--* End icon responsive -->
 </body>
 
 </html>
